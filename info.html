@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <link rel="stylesheet" href="lul.css">
+</head>
+<body>
+    <a href="index.html" style="position:absolute;top:20px;left:20px;z-index:10;">
+        <img src="IWeakness.png" alt="Home" style="height:120px;width:auto;">
+    </a>
+    <button class="theme-toggle" id="themeToggle">Dark Theme</button>
+    <h1>Information Page</h1>
+    <nav>
+        <a href="index.html">Welcome</a> |
+        <a href="about.html">About Me</a>
+    </nav>
+    <p><strong>Lorem.impsum</strong> said:<br>
+    dolor sit amet, consectetur<br><br>
+    <strong>Nulla.facilisi</strong> said:<br>
+    Pellentesque habitant<br><br>
+    <strong>Morbi.tristique</strong> said:<br>
+    senectus et netus<br><br>
+    <strong>Vestibulum.ante</strong> said:<br>
+    primis in faucibus<br><br>
+    <strong>Curabitur.sodales</strong> said:<br>
+    sapien nec massa<br><br>
+    <strong>Aliquam.erat</strong> said:<br>
+    volutpat ut enim<br><br>
+    <strong>Vivamus.luctus</strong> said:<br>
+    urna euismod pretium<br><br>
+    <strong>Phasellus.felis</strong> said:<br>
+    euismod in dictum<br><br>
+    <strong>Donec.placerat</strong> said:<br>
+    enim nec facilisis<br><br>
+    <strong>Etiam.quis</strong> said:<br>
+    velit nec urna</p>
+    <div class="ad-window">
+        <img src="ad.png" alt="Ad window" style="max-width:300px; width:100%;">
+    </div>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" target="_blank" style="position:fixed;bottom:10px;right:15px;color:#4a90e2;font-size:0.9em;text-decoration:underline;z-index:100;">click me for free money</a>
+<script>
+// Persist theme and update button text
+const themeToggle = document.getElementById('themeToggle');
+function setTheme(dark) {
+    document.body.classList.toggle('dark-theme', dark);
+    themeToggle.textContent = dark ? 'Light Mode' : 'Dark Theme';
+    localStorage.setItem('darkTheme', dark ? '1' : '0');
+}
+themeToggle.onclick = () => setTheme(!document.body.classList.contains('dark-theme'));
+// On load
+setTheme(localStorage.getItem('darkTheme') === '1');
+</script>
+</body>
+</html>
