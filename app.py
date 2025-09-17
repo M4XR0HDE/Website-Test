@@ -23,7 +23,7 @@ def serve_static(filename):
     
 @app.route('/api/news')
 def get_news():
-    api_key = ''  #actual key
+    api_key = '<your_newsapi_key>'  #add your newsapi key here
     url = 'https://newsapi.org/v2/everything' #url pointing to newsapi "everything" endpoint
     params = {
         'q': 'cybersecurity', #search query for cybersecurity news
