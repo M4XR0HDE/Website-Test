@@ -49,6 +49,25 @@ nav a:hover {
 	color: #4a90e2 !important;
 }
 
+/* Explicit light theme styles to override dark theme when switching back */
+body:not(.dark-theme), html:not(.dark-theme) {
+	background: #f9f9f9 !important;
+	color: #222 !important;
+}
+body:not(.dark-theme) h1, html:not(.dark-theme) h1 {
+	color: #4a90e2 !important;
+}
+body:not(.dark-theme) p, html:not(.dark-theme) p {
+	color: #222 !important;
+}
+body:not(.dark-theme) nav a, html:not(.dark-theme) nav a {
+	color: #4a90e2 !important;
+}
+body:not(.dark-theme) .theme-toggle, html:not(.dark-theme) .theme-toggle {
+	color: #fff !important;
+	background: #4a90e2 !important;
+}
+
 .theme-toggle {
 	position: fixed;
 	top: 20px;
