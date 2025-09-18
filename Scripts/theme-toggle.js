@@ -1,11 +1,13 @@
-// Persist theme and update button text
+// Persist theme and update button text using cookies
 const themeToggle = document.getElementById('themeToggle');
 function setTheme(dark) {
-    document.body.classList.toggle('dark-theme', dark);
+    // Toggle dark-theme on both <html> and <body> for full coverage
     document.documentElement.classList.toggle('dark-theme', dark);
+    document.body.classList.toggle('dark-theme', dark);
     themeToggle.textContent = dark ? 'Light Mode' : 'Dark Theme';
-    localStorage.setItem('darkTheme', dark ? '1' : '0');
+    document.cookie = `darkTheme=${dark ? '1' : '0'}; path=/;`;
 }
-themeToggle.onclick = () => setTheme(!document.body.classList.contains('dark-theme'));
+
+themeToggle.onclick = () => setTheme(!document.documentElement.classList.contains('dark-theme'));
 // On load
-setTheme(localStorage.getItem('darkTheme') === '1');
+setTheme(document.documentElement.classList.contains('dark-theme'));
