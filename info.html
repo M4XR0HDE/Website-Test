@@ -3,47 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Information - Cybersecurity News Tracker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        h2 {
-            color: #007BFF;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        .contact {
-            margin-top: 30px;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="lul.css">
+    <script src="Scripts/check-theme.js" defer></script>
+    <script src="Scripts/theme-toggle.js" defer></script>
+    <script src="Scripts/fetch-news.js" defer></script>
+    <script src="Scripts/login-dropdown.js" defer></script>
 </head>
 <body>
-
-    <h1>Information</h1>
-
-    <p>Our website collects cybersecurity news from <strong>trusted sources via APIs</strong> and updates regularly to ensure you get accurate and timely information.</p>
-
-    <h2>Privacy & Security</h2>
-    <p>We respect your privacy and handle all data securely. We also use <strong>cookies</strong> to enhance your browsing experience and provide personalized content.</p>
-
-    <h2>Contact</h2>
-    <p class="contact">
-        CyberSteps, Berlin<br>
-        Tel: +49 0123 20201000
-    </p>
-
-    <p>Stay informed. Stay protected.</p>
-
+    <header>
+        <a href="index.html" class="logo">
+            <img src="IWeakness.png" alt="Home">
+        </a>
+        <nav style="margin-left:auto;">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <button id="loginBtn" class="login-btn nav-login-btn">Login</button>
+        </nav>
+    </header>
+    <main>
+        <img src="About_me.jpg" alt="About Us" style="max-width:360px;max-height:360px;display:block;margin:100px auto;">
+        <div id="newsContainer" class="news-scroll-box"></div>
+    </main>
+    <button class="theme-toggle bottom-right" id="themeToggle">Dark Theme</button>
+    <footer>
+        <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+    </footer>
+    <div id="loginDropdown" class="login-dropdown" style="display:none; position:absolute; right:30px; top:80px;">
+        <label for="loginName">Username:</label>
+        <input type="text" id="loginName" name="loginName" placeholder="Username">
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" placeholder="Password">
+        <a href="#" class="login-link">Create an account or forgot password</a>
+    </div>
 </body>
 </html>
 
