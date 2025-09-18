@@ -4,23 +4,43 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="lul.css">
-        <script src="Scripts/check-theme.js"></script>
+    <script src="Scripts/check-theme.js" defer></script>
+    <script src="Scripts/theme-toggle.js" defer></script>
 </head>
 <body>
-    <a href="index.html" style="position:absolute;top:20px;left:20px;z-index:10;">
-        <img src="IWeakness.png" alt="Home" style="height:120px;width:auto;">
-    </a>
-    <button class="theme-toggle" id="themeToggle">Dark Theme</button>
-    <h1>Welcome to My Simple Website!</h1>
-    <nav>
-        <a href="info.html">Information</a> |
-        <a href="about.html">About Me</a>
-    </nav>
-    <p>This is the welcome page. Enjoy your stay!</p>
-    <div class="ad-window">
-        <img src="ad.png" alt="Ad window" style="max-width:300px; width:100%;">
-    </div>
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" target="_blank" style="position:fixed;bottom:10px;right:15px;color:#4a90e2;font-size:0.9em;text-decoration:underline;z-index:100;">click me for free money</a>
-<script src="Scripts/theme-toggle.js"></script>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="IWeakness.png" alt="Home">
+        </a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="info.html">Information</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle">Dark Theme</button>
+    </header>
+
+    <main>
+        <h1>Welcome to Cybersecurity News!</h1>
+        <p>“From Vulnerabilities to Victories: Track It All”!</p>
+
+        <div class="ad-window">
+            <img src="ad.png" alt="Ad window">
+            <a href="https://your-news-link.com" target="_blank" class="ad-button">
+                Click here to track latest news and updates
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" 
+           target="_blank" 
+           class="footer-link"
+           title="This link is just for fun and demonstration purposes!">
+           Click me for free money
+        </a>
+        <p class="footer-info">This link is for fun and demonstration purposes only.</p>
+    </footer>
 </body>
 </html>
+
