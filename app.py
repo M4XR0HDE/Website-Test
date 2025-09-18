@@ -9,6 +9,7 @@ STATIC_DIR = os.path.join(BASE_DIR)
 app = Flask(__name__, static_folder=STATIC_DIR, template_folder=STATIC_DIR)
 
 @app.route('/')
+@app.route('/index.html')
 def index():
     return send_from_directory(app.static_folder, 'index.html')
 
