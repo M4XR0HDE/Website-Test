@@ -6,32 +6,38 @@
     <link rel="stylesheet" href="lul.css">
     <script src="Scripts/check-theme.js" defer></script>
     <script src="Scripts/theme-toggle.js" defer></script>
+    <script src="Scripts/login-dropdown.js" defer></script>
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">
             <img src="IWeakness.png" alt="Home">
         </a>
-        <nav>
+        <nav style="margin-left:auto;">
             <a href="index.html" class="active">Home</a>
-            <a href="info.html">Information</a>
             <a href="about.html">About Us</a>
+            <button id="loginBtn" class="login-btn nav-login-btn">Login</button>
         </nav>
-        <button class="theme-toggle" id="themeToggle">Dark Theme</button>
     </header>
-
+    <div id="loginDropdown" class="login-dropdown" style="display:none; position:absolute; right:30px; top:80px;">
+        <label for="loginName">Username:</label>
+        <input type="text" id="loginName" name="loginName" placeholder="Username">
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" placeholder="Password">
+        <a href="#" class="login-link">Create an account or forgot password</a>
+    </div>
     <main>
         <h1>Welcome to Cybersecurity News!</h1>
         <p>“From Vulnerabilities to Victories: Track It All”!</p>
 
         <div class="ad-window">
             <img src="ad.png" alt="Ad window">
-            <a href="https://your-news-link.com" target="_blank" class="ad-button">
-                Click here to track latest news and updates
+            <a href="info.html" class="ad-button">
+                Click here to view Information
             </a>
         </div>
     </main>
-
+    <button class="theme-toggle bottom-right" id="themeToggle">Dark Theme</button>
     <footer>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" 
            target="_blank" 

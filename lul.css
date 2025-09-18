@@ -10,6 +10,8 @@ body {
     line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Header styling */
@@ -61,6 +63,23 @@ nav a.active {
 .theme-toggle:hover {
     background-color: #357ab8;
 }
+/* Nav login button styles */
+.nav-login-btn {
+    margin-left: 16px;
+    padding: 6px 18px;
+    font-size: 1em;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.nav-login-btn:hover {
+    background: #357ab8;
+}
+
 
 /* Main content */
 main {
@@ -156,4 +175,106 @@ body.dark-theme .ad-button {
 
 body.dark-theme .ad-button:hover {
     background-color: #357ab8;
+}
+
+/* About page background covers body between header and footer */
+body.about-bg {
+    background: url('About_me.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Login section styles */
+.login-section {
+    margin: 32px auto 0 auto;
+    max-width: 320px;
+    text-align: left;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.login-dropdown {
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 16px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 220px;
+    z-index: 1000;
+}
+
+.login-dropdown label {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.login-dropdown input {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+}
+
+.login-link {
+    color: #4a90e2;
+    text-decoration: underline;
+    font-size: 0.95em;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.login-link:hover {
+    color: #357ab8;
+}
+
+/* Dark theme for login dropdown */
+body.dark-theme .login-dropdown {
+    background: rgba(34,34,34,0.98);
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+
+body.dark-theme .login-dropdown input {
+    background: #222;
+    color: #f1f1f1;
+    border: 1px solid #666;
+}
+
+body.dark-theme .login-link {
+    color: #9ec1ff;
+}
+
+body.dark-theme .login-link:hover {
+    color: #4a90e2;
+}
+
+/* Scrollable news box */
+.news-scroll-box {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 400px;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 18px;
+}
+
+body.dark-theme .news-scroll-box {
+    background: rgba(34,34,34,0.98);
+    color: #f1f1f1;
 }

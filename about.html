@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <title>About Us</title>
     <link rel="stylesheet" href="lul.css">
+    <script src="Scripts/check-theme.js" defer></script>
+    <script src="Scripts/theme-toggle.js" defer></script>
+    <script src="Scripts/login-dropdown.js" defer></script>
 </head>
-<body>
+<body class="about-bg">
     <header>
         <a href="index.html" class="logo">
             <img src="IWeakness.png" alt="Home">
         </a>
-        <nav>
+        <nav style="margin-left:auto;">
             <a href="index.html">Home</a>
-            <a href="info.html">Information</a>
             <a href="about.html" class="active">About Us</a>
+            <button id="loginBtn" class="login-btn nav-login-btn">Login</button>
         </nav>
     </header>
 
     <main>
+
+        <h1>Information</h1>
+
+        <p>Our website collects cybersecurity news from <strong>trusted sources via APIs</strong> and updates regularly to ensure you get accurate and timely information.</p>
+
+        <h2>Privacy & Security</h2>
+        <p>We respect your privacy and handle all data securely. We also use <strong>cookies</strong> to enhance your browsing experience and provide personalized content.</p>
+
+        <p>Stay informed. Stay protected.</p>
+
         <h1>About Us</h1>
 
         <p>
@@ -34,9 +47,22 @@
             <li><strong>Max</strong> – Developer</li>
             <li><strong>Kwabena</strong> – Designer</li>
         </ul>
-
+        <h2>Contact</h2>
+        <p class="contact">
+            CyberSteps, Berlin<br>
+            Tel: +49 0123 20201000
+        </p>
         <p>All respect goes to <strong>Mahmoud, the Project Owner</strong>.</p>
     </main>
+    <div id="loginDropdown" class="login-dropdown" style="display:none; position:absolute; right:50px; top:80px;">
+        <label for="loginName">Username:</label>
+        <input type="text" id="loginName" name="loginName" placeholder="Username">
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" placeholder="Password">
+        <a href="#" class="login-link">Create an account or forgot password</a>
+    </div>
+
+    <button class="theme-toggle bottom-right" id="themeToggle">Dark Theme</button>
 
     <footer>
         <p>&copy; 2025 Your Website Name. All rights reserved.</p>
