@@ -1,6 +1,7 @@
 import requests
 from flask import Flask, send_from_directory, jsonify
 import os
+import json
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(BASE_DIR)
@@ -23,8 +24,11 @@ def serve_static(filename):
     
 @app.route('/api/news')
 def get_news():
-    api_key = '<your_newsapi_key>'  #add your newsapi key here
-    url = 'https://newsapi.org/v2/everything' #url pointing to newsapi "everything" endpoint
+    # Load API keys from JSON file
+    with open(os.path.join(BASE_DIR, 'api_keys.json')) as f:
+        keys = json.load(f)
+    api_key = keys.get('your_newsapi_key', '')
+    url = 'https://newsapi.org/v2/everything'
     params = {
         'q': 'cybersecurity', #search query for cybersecurity news
         'language': 'en', #language set to english
