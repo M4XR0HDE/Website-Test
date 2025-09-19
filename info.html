@@ -8,6 +8,37 @@
     <script src="Scripts/theme-toggle.js" defer></script>
     <script src="Scripts/fetch-news.js" defer></script>
     <script src="Scripts/login-dropdown.js" defer></script>
+    <script src="Scripts/search-handler.js" defer></script>
+     .search-form {
+            position: relative;
+        }
+        .search-input {
+            padding: 6px 32px 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+        }
+        .search-button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #555;
+        }
+        .search-button:hover {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,6 +48,10 @@
         <nav style="margin-left:auto;">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
+            <form id="searchForm" class="search-form">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+                <button type="submit" class="search-button">:lupe:</button>
+            </form>
             <button id="loginBtn" class="login-btn nav-login-btn">Login</button>
         </nav>
     </header>
