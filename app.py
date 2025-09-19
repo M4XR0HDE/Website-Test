@@ -2,6 +2,7 @@ import requests
 from flask import Flask, send_from_directory, jsonify
 import os
 import json
+from werkzeug.security import generate_password_hash, check_password_hash
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_DIR = os.path.join(BASE_DIR)
@@ -39,6 +40,47 @@ def get_news():
         return jsonify(response.json())
     else:
         return jsonify({'error': 'Failed to fetch news'}), response.status_code
+
+USERS_FILE = 'users.json'
+
+def load_users():
+    try:
+        with open(USERS_FILE, 'r') as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+def save_users(users):
+    with open(USERS_FILE, 'w') as f:
+        json.dump(users, f)
+
+@app.route('/api/register', methods=['POST'])
+def register():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    if not username or not password:
+        return jsonify({'success': False, 'message': 'Missing username or password'}), 400
+    users = load_users()
+    if any(u['username'] == username for u in users):
+        return jsonify({'success': False, 'message': 'Username already exists'}), 409
+    hashed_pw = generate_password_hash(password)
+    users.append({'username': username, 'password': hashed_pw})
+    save_users(users)
+    return jsonify({'success': True, 'message': 'User registered'})
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    if not username or not password:
+        return jsonify({'success': False, 'message': 'Missing username or password'}), 400
+    users = load_users()
+    for user in users:
+        if user['username'] == username and check_password_hash(user['password'], password):
+            return jsonify({'success': True, 'message': 'Login successful'})
+    return jsonify({'success': False, 'message': 'Invalid credentials'}), 401
 
 if __name__ == '__main__':
     app.run(debug=True)
