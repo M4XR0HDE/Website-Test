@@ -32,7 +32,6 @@ def get_news():
     params = {
         'q': 'cybersecurity', #search query for cybersecurity news
         'language': 'en', #language set to english
-        'pageSize': 5, #limit to 5 articles
         'apiKey': api_key #api key for authentication
     }
     response = requests.get(url, params=params) #make GET request to newsapi

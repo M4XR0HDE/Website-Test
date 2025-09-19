@@ -21,9 +21,15 @@
         </nav>
     </header>
     <main>
-        <img src="About_me.jpg" alt="About Us" style="max-width:800px;max-height:300px;display:block;margin:16px auto;">
-        <h2 id="newsTitle" style="color:#4a90e2;text-align:center;">Cybersecurity News</h2>
-        <div id="newsContainer" class="news-scroll-box"></div>
+    <img src="About_me.jpg" alt="About Us" style="height:120px;width:100%;object-fit:cover;object-position:center;display:block;margin:16px auto;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <h2 id="newsTitle" style="color:#4a90e2; margin: 0;">Cybersecurity News</h2>
+            <div class="searchbar-container" style="display: flex; align-items: center;">
+                <input type="text" class="searchbar-input" id="searchInput" placeholder="Search..." style="margin-right: 8px; padding: 6px 12px; border-radius: 20px; border: 1px solid #ccc; font-size: 1em; width: 180px;">
+                <button class="searchbar-btn" id="searchBtn" style="font-size: 1em; padding: 6px 18px; border-radius: 20px; background: #1976d2; color: #fff; border: none; cursor: pointer;">Search</button>
+            </div>
+            </div>
+            <div id="newsContainer" class="news-scroll-box"></div>
     </main>
     <button class="theme-toggle bottom-right" id="themeToggle">Dark Theme</button>
     <footer>
