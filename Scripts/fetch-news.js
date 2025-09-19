@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
           if (data.articles && data.articles.length > 0) {
-            container.innerHTML = '<h2 style="color:#4a90e2;">Cybersecurity News</h2>' +
+            container.innerHTML = '' +
               data.articles.map(article => `
                 <div style="display:flex;align-items:flex-start;margin-bottom:24px;background:#f4f4f4;padding:12px;border-radius:8px;">
                   <a href="${article.url}" target="_blank">
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         if (data.articles && data.articles.length > 0) {
-          container.innerHTML = '<h2 style="color:#4a90e2;text-align:center;">Cybersecurity News</h2>' +
+          container.innerHTML = '' +
             data.articles.map(article => `
               <div style="display:flex;align-items:flex-start;margin-bottom:24px;background:#f4f4f4;padding:12px;border-radius:8px;">
                 <a href="${article.url}" target="_blank">
